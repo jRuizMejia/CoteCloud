@@ -25,7 +25,7 @@ namespace Cote_Cloud
         {
             if (!IsPostBack)
             {
-                if (Session["modRepor"]!=null)
+                if (Session["modRepor"]!= null)
                 {
                     transacciones.TransPreMatricula llamada = new transacciones.TransPreMatricula();
                     reporte.LocalReport.DataSources.Clear();

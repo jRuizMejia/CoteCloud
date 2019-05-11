@@ -23,7 +23,7 @@ namespace Cote_Cloud.User
         public string MailFromName { get; set; }
         public string MailTo { get; set; }
         public string MailSubject { get; set; }
-        public List<string> MailRecipients { get; set; }
+        public List<string> MailToReply { get; set; }
         public List<string> MailCCRecipients { get; set; }
         public List<string> MailBccRecipients { get; set; }
         public List<string> MailAttachments { get; set; }
@@ -42,7 +42,7 @@ namespace Cote_Cloud.User
             this.MailFrom = System.Configuration.ConfigurationManager.AppSettings.Get("FromMail").ToString();
 
             this.MailSubject = String.Empty;
-            this.MailRecipients = new List<string>();
+            this.MailToReply = new List<string>();
             this.MailCCRecipients = new List<string>();
             this.MailBccRecipients = new List<string>();
             this.MailAttachments = new List<string>();
@@ -50,9 +50,9 @@ namespace Cote_Cloud.User
             this.bodyHtml = true;
             this.informativo = true;
         }
-        public void AddRecipient(string sMailRecipient)
+        public void AddtoReply(string sMailtoReply)
         {
-            this.MailRecipients.Add(sMailRecipient);
+            this.MailToReply.Add(sMailtoReply);
         }
         public void AddCCRecipient(string sMailRecipient)
         {
@@ -67,7 +67,7 @@ namespace Cote_Cloud.User
             this.MailAttachments.Add(sAttachLocation);
         }
         public void ClearRecipients() {
-            this.MailRecipients.Clear();
+            this.MailToReply.Clear();
             this.MailCCRecipients.Clear();
             this.MailBccRecipients.Clear();
         }
@@ -98,7 +98,7 @@ namespace Cote_Cloud.User
                 {
                     mjs.Bcc.Add(sMailBccRecipient);
                 }
-                foreach (string sMailRecipient in this.MailRecipients)
+                foreach (string sMailRecipient in this.MailToReply)
                 {
                     MailAddress email = new MailAddress(sMailRecipient);
                     mjs.ReplyToList.Add(email);

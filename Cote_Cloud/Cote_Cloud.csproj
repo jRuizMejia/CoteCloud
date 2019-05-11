@@ -230,6 +230,7 @@
     <Content Include="icons\weather-icons\fonts\weathericons-regular-webfont.woff2" />
     <Content Include="administracion\admin.Master" />
     <Content Include="estudiantes\estudiantes.Master" />
+    <Content Include="problem.aspx" />
     <Content Include="profesores\profes.Master" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
@@ -303,8 +304,7 @@
     <Content Include="css\sweetalert.css" />
     <Content Include="css\user.css" />
     <Content Include="emaildesign.txt" />
-    <Content Include="errores\404.html" />
-    <Content Include="errores\error.html" />
+    <Content Include="404.html" />
     <Content Include="estudiantes\estudiantes.aspx" />
     <Content Include="icons\flag-icon-css\flag-icon.min.css" />
     <Content Include="icons\flag-icon-css\flags\ad.svg" />
@@ -861,6 +861,13 @@
     </Compile>
     <Compile Include="LogIn\InicioSesion.aspx.designer.cs">
       <DependentUpon>InicioSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="problem.aspx.cs">
+      <DependentUpon>problem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="problem.aspx.designer.cs">
+      <DependentUpon>problem.aspx</DependentUpon>
     </Compile>
     <Compile Include="profesores\profes.Master.cs">
       <DependentUpon>profes.Master</DependentUpon>
